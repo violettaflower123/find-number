@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./app.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Найди число</title>
+  </head>
+  <body>
+    <main class="app">
+      <div id="intro" class="intro">
+        <div class="intro-header">
+          <h3>Найди число</h3>
+          <p>Тренажер на внимание</p>
+        </div>
+        <h5 class="intro-list-title">Тренирует:</h5>
+        <ul class="intro-list">
+          <li class="intro-item">
+            <img class="intro-icon" src="./img/one.svg" />
+            <div class="intro-el">
+              <p>Произвольное внимание</p>
+              <p>Научитесь концентрировать внимание только на важном</p>
+            </div>
+          </li>
+          <li class="intro-item">
+            <img class="intro-icon" src="./img/two.svg" />
+            <div class="intro-el">
+              <p>Концентрацию и переключение внимания</p>
+              <p>Позволит не упускать из виду важные детали</p>
+            </div>
+          </li>
+          <li class="intro-item">
+            <img class="intro-icon" src="./img/three.svg" />
+            <div class="intro-el">
+              <p>Зрительное восприятие</p>
+              <p>Сможете быстро находить основные мысли в текстах</p>
+            </div>
+          </li>
+        </ul>
+        <button class="intro-btn" id="next-btn">Далее</button>
+      </div>
+      <div id="game-container" class="game-container">
+        <div class="start-overlay" id="start-overlay"></div>
+        <div class="countdown" id="countdown">
+          <div class="countdown-wrapper">
+            <span class="countdown-el" id="countdown-el">3</span>
+          </div>
+        </div>
+        <div class="game-info">
+          <div class="game-info-item">
+            <p>Время</p>
+            <p id="timer">60</p>
+          </div>
+          <div class="game-info-item">
+            <p>Уровень</p>
+            <p>1-9</p>
+          </div>
+          <div class="game-info-item">
+            <p>Очки</p>
+            <p id="score">0</p>
+          </div>
+          <div class="game-info-item">
+            <p>Бонус</p>
+            <p>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-regular fa-circle"></i>
+              <i class="fa-regular fa-circle"></i>
+              <i class="fa-regular fa-circle"></i>
+              <i class="fa-regular fa-circle"></i>
+              x1
+            </p>
+          </div>
+        </div>
+
+        <div class="target-number-wrapper">
+          Найдите указанное число:
+          <div id="target-number" class="target-number"></div>
+        </div>
+        <div class="numbers-container"></div>
+      </div>
+      <div id="results-container" class="results-container">
+        <div class="intro-header">
+          <p>Ваши результаты</p>
+        </div>
+        <div class="results-wrapper">
+          <p>Текущий результат</p>
+          <p class="final-score">48</p>
+          <p>Верных ответов</p>
+          <div class="correct-score">
+            <span class="final-score">48</span> из
+            <span class="total-score" id="total-score">48</span>
+          </div>
+        </div>
+        <button class="intro-btn" id="restart-btn">Начать сначала</button>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap");
+@import url(./vendor/normalize.css);
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f5fa;
+}
+
+.app {
+  width: 50%;
+  height: 80vh;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+h3,
+p,
+h6,
+h1 {
+  margin: 0;
+}
+
+.numbers-container {
+  display: grid;
+  max-width: 80%;
+  margin: 20px auto;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  animation: slide-in 0.5s ease-in-out;
+}
+
+.number-wrapper {
+  font-size: 40px;
+  padding: 30px 20px;
+  margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  font-weight: 700;
+}
+
+.number-wrapper:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.results-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.results-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  max-width: 60%;
+  margin: 40px auto;
+  align-items: baseline;
+  gap: 10px;
+  text-align: left;
+}
+
+.final-score, .correct-score {
+  font-weight: 700;
+}
+
+.show-mark .check-mark,
+.show-mark .cross-mark {
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 100px;
+}
+
+.show-mark .check-mark {
+  color: green;
+}
+
+.show-mark .cross-mark {
+  color: red;
+}
+
+.show-mark .check-mark,
+.show-mark .cross-mark {
+  transition: opacity 0.5s ease;
+}
+
+.tick-mark {
+  position: absolute;
+  bottom: 50%;
+  left: 30%;
+  font-size: 130px;
+  color: green;
+  transition: opacity 0.5s ease;
+  display: block;
+  visibility: hidden;
+}
+
+.intro {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.game-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #4db8ec;
+}
+
+.hidden {
+  display: none;
+}
+
+.start-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background-image: url(./img/back.jpg);
+  background-size: cover;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.point {
+  width: 120px;
+}
+
+.countdown {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1f4a5d;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.intro-btn {
+  background-color: #603aab;
+  border: none;
+  padding: 15px 74px;
+  border-radius: 22px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.intro-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+}
+
+.intro-header {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #5a01b1, transparent),
+    url(./img/header.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px 4px 0 0;
+  color: white;
+}
+
+.intro-header h3 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.intro-list-title {
+  color: #5a01b1;
+  font-size: 20px;
+}
+
+.intro-item {
+  display: flex;
+  align-items: baseline;
+  column-gap: 14px;
+  margin-bottom: 25px;
+}
+
+.intro-list {
+  list-style: none;
+  width: fit-content;
+  padding: 0;
+  margin: 20px auto;
+}
+
+.intro-el {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  row-gap: 7px;
+}
+
+.intro-el p:first-of-type {
+  font-weight: 700;
+}
+
+.countdown-wrapper {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #64818f;
+  border-radius: 50%;
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.game-info {
+  background-color: #94d5f5;
+  display: flex;
+  max-width: 70%;
+  margin-left: auto;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+.game-info-item {
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.game-info-item p:nth-last-child(1) {
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.game-info-item p i {
+  font-size: 7px;
+}
+
+.target-number-wrapper {
+  width: 70%;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 20px;
+  align-items: center;
+}
+
+.target-number {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.first-part {
+  background-color: #fd73af;
+}
+
+.second-part {
+  background-color: #95c94d;
+}
+
+.third-part {
+  background-color: #f28e38;
+}
+
+.fourth-part {
+  background-color: #4db8ec;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-animation {
+  animation: fade 3s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    font-size: 35px;
+  }
+  100% {
+    font-size: 0;
+  }
+}
+
+.bounce-animation {
+  animation: bounce 3s linear infinite;
+}
+
