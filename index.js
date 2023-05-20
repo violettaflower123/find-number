@@ -53,7 +53,7 @@ window.onload = function () {
     if (gameStarted) return;
     gameStarted = true;
     score = 0;
-    timer = 10;
+    timer = 60;
     scoreElement.textContent = `${score}`;
     timerElement.textContent = `00:${timer}`;
 
